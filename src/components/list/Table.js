@@ -5,17 +5,17 @@ import { renderChangePercenet } from '../../helpers'
 import './Table.css'
 
 const Table = (props) => {
-  const { currencies, history } = props
+  const { currencies, history, handleSort } = props
 
     return (
         <div className="Table-container">
         <table className="Table">
           <thead className="Table-head">
             <tr>
-              <th>Cryptocurrency</th>
-              <th>Price</th>
-              <th>Market Cap</th>
-              <th>24H Change</th>
+              <th onClick={handleSort.bind(null, 'name')} >Cryptocurrency</th>
+              <th onClick={handleSort.bind(null, 'price')} >Price</th>
+              <th onClick={handleSort.bind(null, 'marketCap')} >Market Cap</th>
+              <th onClick={handleSort.bind(null, 'percentChange24h')} >24H Change</th>
             </tr>
           </thead>
           <tbody className="Table-body">
